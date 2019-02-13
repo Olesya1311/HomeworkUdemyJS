@@ -12,7 +12,8 @@ let appData = {
    budget: money,
    timeData: time,
    expenses: expenses,
-   optionalExpenses: [],
+   optionalExpenses: {},
+   income: [],
    savings: false
 };
 alert(money/30);
