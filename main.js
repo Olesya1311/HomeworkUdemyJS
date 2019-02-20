@@ -23,10 +23,8 @@ function chooseExpenses() {
             b = prompt("Во сколько обойдется?", '');
         if ((typeof(a)) === "string" && (typeof(a)) != null && (typeof(b)) != null 
             && a != "" && b != "" && a.length < 50) { 
-            console.log("done");
             appData.expenses[a] = b;
         }  else {
-        alert("Введите ответы верно!");
             i--;
         } 
     }
@@ -102,12 +100,15 @@ function checkSavings() {
     }
 }
 checkSavings();
-function chooseOptExpenses() {
-    let choose1 = +prompt("Сумма необязательных расходов?"),
-        choose2 = +prompt("Сумма необязательных расходов?"),
-        choose3 = +prompt("Сумма необязательных расходов?");
-    let optionalExpenses = {};
-    optionalExpenses.1 = choose1;
-    optionalExpenses.2 = choose2;
-    optionalExpenses.3 = choose3;
+
+function chooseOptExpenses() {                             // Функция для определения необязательных расходов
+
+    for (let i = 1; i <= 3; i++) {
+        let questionOptExpenses = prompt("Статья необязательных расходов?");
+        appData.optionalExpenses[i] = questionOptExpenses;
+        console.log(appData.optionalExpenses);
+    }
+
+
 }
+chooseOptExpenses();
